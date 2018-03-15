@@ -24,7 +24,8 @@ function afterEvery(n, func) {
   {
     let counter = 1
     return function(...args) {
-      if (counter++ % n == 0) {
+      if (counter++ == n) {
+        counter = 1
         return func.apply(this, args)
       }
     }
